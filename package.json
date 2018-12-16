@@ -5,8 +5,11 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "babel src --out-dir out --copy-files",
-    "pack": "build",
+    "startDev": "cross-env NODE_ENV=development electron .",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
+    "buildDev": "cross-env NODE_ENV=development webpack --config ./config/webpack.dev.js",
+    "buildRun": "npm run buildDev && npm run startDev",
+    "pack": "npm run build && build",
     "lint": "eslint . --ext .js,.jsx",
     "lintFix": "eslint . --ext .js,.jsx --fix",
     "postinstall": "electron-builder install-app-deps"
@@ -23,10 +26,12 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.0.1",
     "electron": "^3.0.10",
     "electron-builder": "^20.38.2",
     "eslint": "^5.9.0",
@@ -39,7 +44,13 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.2.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.5",
+    "webpack-node-externals": "^1.7.2"
   },
   "eslintConfig": {
     "plugins": [

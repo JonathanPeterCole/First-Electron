@@ -13,10 +13,12 @@ function createWindow () {
   win.setMenu(null)
 
   // and load the index.html of the app.
-  win.loadFile('out/index.html')
+  win.loadFile('index.html')
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  if (process.env.NODE_ENV === 'development') {
+    win.webContents.openDevTools()
+  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {

@@ -22,12 +22,20 @@ An Experimental electron app to learn more about the framework.
   `npm run start`
 
 * **Start Development**  
-  Builds and runs the application on port 3000, listenting for changes.  
+  Runs the application with the dev environment (enabling dev-tools).  
   `npm run startDev`
 
 * **Build**  
-  Runs babel to convert ES6 code.  
+  Runs webpack to convert ES6 code.  
   `npm run build`
+
+* **Build Development**  
+  Runs webpack to convert ES6 code with source-maps.  
+  `npm run buildDev`
+
+* **Build and Run**  
+  Runs webpack to convert ES6 code and starts the app.  
+  `npm run buildRun`
 
 * **Package**  
   Packages the app for distribution.  
