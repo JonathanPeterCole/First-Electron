@@ -1,24 +1,44 @@
 const { app, BrowserWindow } = require('electron')
+const os = require('os')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 function createWindow () {
-  // Create the browser window.
-  win = new BrowserWindow({
+  // Prepare the browser window options
+  let windowOptions = {
     width: 800,
-    height: 600
-  })
+    height: 475,
+    backgroundColor: '#1d1d1d',
+    show: false
+  }
+
+  // OS Specific browser options
+  if (os.platform() === 'win32') {
+    // On windows, hide the frame
+    windowOptions.frame = false
+  } else {
+    // On other OS's, change the titlebar style
+    windowOptions.titleBarStyle = 'hiddenInset'
+  }
+
+  // Show the window
+  win = new BrowserWindow(windowOptions)
+
+  // Hide the menu
   win.setMenu(null)
 
-  // and load the index.html of the app.
+  // Load the index.html of the app.
   win.loadFile('index.html')
 
-  // Open the DevTools.
+  // Open the DevTools if the NODE_ENV is set to development
   if (process.env.NODE_ENV === 'development') {
-    win.webContents.openDevTools()
+    win.webContents.openDevTools({ mode: 'undocked' })
   }
+
+  // Wait until the window is fully loaded before showing
+  win.once('ready-to-show', () => win.show())
 
   // Emitted when the window is closed.
   win.on('closed', () => {

@@ -1,0 +1,8 @@
+.window {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.window .content-container {
+  flex-grow: 1;
+}

@@ -1,0 +1,19 @@
+.titlebar-mac {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  padding: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  -webkit-app-region: drag;
+}
+.titlebar-mac .titlebar-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  color: #000000;
+}
+.titlebar-mac.light .titlebar-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+}

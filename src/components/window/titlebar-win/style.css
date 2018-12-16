@@ -1,0 +1,65 @@
+.titlebar-win {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 29px;
+  padding: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  -webkit-app-region: drag;
+}
+.titlebar-win .titlebar-icon {
+  height: 16px;
+  margin-left: 8px;
+  margin-right: 111px;
+}
+.titlebar-win .titlebar-text {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #000000;
+}
+.titlebar-win.light .titlebar-text {
+  color: #ffffff;
+}
+.titlebar-win .titlebar-controls {
+  display: flex;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+.titlebar-win .titlebar-btn {
+  width: 45px;
+  height: 100%;
+  text-align: center;
+  line-height: 29px;
+  transition: background-color 200ms;
+}
+.titlebar-win .titlebar-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.titlebar-win .titlebar-btn.close:hover {
+  background-color: rgb(212, 18, 35)
+}
+.titlebar-win .titlebar-btn svg {
+  width: 10px;
+  height: 10px;
+  shape-rendering: crispEdges;
+}
+/* Standard Titlebar Controls */
+.titlebar-win .titlebar-btn svg .path {
+  fill: #000000;
+}
+.titlebar-win .titlebar-btn.close:hover svg .path {
+  fill: #ffffff
+}
+/* Light Titlebar Controls */
+.titlebar-win.light .titlebar-btn svg .path {
+  fill: #ffffff;
+}
+.titlebar-win.light .titlebar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.titlebar-win.light .titlebar-btn.close:hover {
+  background-color: rgb(212, 18, 35)!important;
+}
