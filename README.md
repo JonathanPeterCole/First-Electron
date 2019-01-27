@@ -2,36 +2,49 @@
 
 An Experimental electron app to learn more about the framework.
 
-### Quick Start
+## Quick Start
 
-1. Open a terminal to the App directory
+### Prerequisites
 
-1. Install the npm packages  
-  `npm install`
+To build this application, you'll need Node.JS installed with NPM (bundled with Node.JS). You can download them here:
 
-1. Build the application  
-  `npm run build`
+[Download Node.JS and NPM](https://nodejs.org/en/)
 
-1. Run the application  
-  `npm run start`
+### Install and Run
 
-### Commands
+Clone the repo  
+```
+git clone git@github.com:JonathanPeterCole/First-Electron.git
+```
+
+Install with NPM  
+```
+npm install
+```
+
+Build and run the applcation  
+```
+npm run buildRun
+```
+
+### Packaging
+
+To package the app, use the following command, which will build the project for production and then package the application. Packaging the application will always build for production, disabling dev-tools and source maps.  
+```
+npm run pack
+```
+
+## Commands
+
+The following NPM scripts are included in the project. For the commands that build or start the project, you can specify the environment with `:prod` or `:dev`.  
 
 * **Start**  
   Runs the application.  
   `npm run start`
 
-* **Start Development**  
-  Runs the application with the dev environment (enabling dev-tools).  
-  `npm run startDev`
-
 * **Build**  
   Runs webpack to convert ES6 code.  
   `npm run build`
-
-* **Build Development**  
-  Runs webpack to convert ES6 code with source-maps.  
-  `npm run buildDev`
 
 * **Build and Run**  
   Runs webpack to convert ES6 code and starts the app.  
@@ -42,12 +55,8 @@ An Experimental electron app to learn more about the framework.
   `npm run pack`
 
 * **Linting**  
-  Runs ESLint to lint both the client and server-side code.  
-  `npm run lint`
-
-* **Linting Fix**  
-  Runs ESLint with --fix to lint the code and attempt to automatically apply fixes.  
-  `npm run lintFix`
+  Runs ESLint to lint both the client and server-side code. Use `:fix` to attempt to automatically apply fixes.  
+  `npm run lint`  
 
 ## Linting
 
