@@ -60,4 +60,4 @@ The following NPM scripts are included in the project. For the commands that bui
 
 ## Linting
 
-This project is linted with ESlint standard. Commits with linting issues will be blocked. You can lint manually with `npm run lint`, and automatically fix some issues with `npm run lintFix`.
+This project is linted with ESlint standard and standard-react. Commits with linting issues will be blocked.
